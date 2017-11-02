@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+/* 按钮*/
+
+.ui {
+    @at-root {
+        //在这里编写
+        #{&}-btn {
+            display: inline-block;
+            padding: 0 12px;
+            line-height: 28px;
+            border-radius: 3px;
+            background-color: #e6e6e6;
+            font-size: px2em(12px);
+            text-align: center;
+        }
+    }
+}
+
+
+/* 按钮颜色 */
+
+.btn {
+    @at-root {
+        #{&}-blue {
+            @include btn-bg-color(#0078e7);
+        }
+    }
+}
+
+.full-btn {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    background-color: #0c7dc1;
+    border: 1px solid #0c7dc1;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    line-height: 100%;
+    border-radius: 3px;
+    font-size: 0.8125em;
+    padding: 12px 0;
+    &.disabled{
+        background-color: #FFF;
+        color: $bd-color;
+        border: 1px solid $bg-color;
+    }
+    &.orange {
+        background-color: $skin-btn-orange;
+        border-color: $skin-btn-orange
+    }
+    &.white {
+        background-color: #FFF;
+        color: $gray50;
+        border-color:$bd-color;
+    }
+    &.ischeck{
+        background-color: #FFF;
+        color: $gray50;
+        border-color:$gray50;
+
+    }
+    &.nocheck{
+        background-color: $bg-color;
+        color: $gray20;
+        border-color:$gray20;
+    }
+
+}
+.full-btn-off {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #999;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 100%;
+    outline: none;
+    line-height: 100%;
+    border-radius: 3px;
+    font-size: 0.8125em;
+    padding: 12px 0;
+}
+//底部购买按钮
+.buy-btn-wrap {
+    a {
+        display: block;
+        float: left;
+        line-height: 50px;
+        text-align: center;
+        @extend .title-xl;
+        color: $skin-w;
+        &:active {
+            @include opacity(.8);
+        }
+        &.add-shopping {
+            background-color: #ffa200;
+        }
+        &.buy {
+            background-color: $skin-btn-orange;
+        }
+        &.order {
+            background-color: $gray50;
+        }
+        &.go-buy {
+            background-color: $skin-btn-orange;
+        }
+    }
+}
+
+.control-btn {
+    display: inline-block;
+    border: 1px solid $gray20;
+    color: $gray50;
+    padding: 4px 7px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 0.75em; //12px
+    line-height: 100%;
+    &.current{
+        border-color: #339dd9;
+        color: #339dd9;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    &.orange {
+        border: 1px solid $skin-btn-orange;
+        color: $skin-btn-orange;
+    }
+    &.bg-blue {
+        border-color: #0c7dc1;
+        background-color: #0c7dc1;
+        color: #fff;
+    }
+    &.white-bg{
+        border-color: #f5f5f5;
+        background-color: #f5f5f5;
+        color: $gray50;
+        margin-top: 5px;
+    }
+}

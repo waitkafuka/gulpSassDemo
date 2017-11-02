@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* 模态框*/
+
+// 遮盖
+.ui-cover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background: #000;
+  z-index: 20;
+  @include opacity(.4);
+}
+
+.ui-modal-wrap {
+  position: fixed;
+  top: 40%;
+  right: 10%;
+  left: 10%;
+  z-index: 21;
+  @extend .title-ms;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.ui-modal {
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+   @extend .bdbt;
+  p {
+
+    // padding-bottom: 10px;
+    // text-align: left;
+    @extend .s-gray50;
+  }
+  // .icon-cancel-circle{
+  //   position: absolute;
+  // }
+  .close-wrap{
+    margin-top: -5px;
+  }
+}
+
+.modal-control-wrap {
+  width: 100%;
+  @extend %clearfix;
+  a {
+    float: left;
+    @extend .g-container-half;
+    @extend %border-box;
+    text-align: center;
+    border-right: 1px solid $bd-color;
+    padding: 10px;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* header*/
+
+.g-top {
+  width: 100%;
+  padding: 8px 10px;
+  background-color: $skin-w;
+  border-bottom: 1px solid $bd-color;
+  // overflow: hidden;
+  z-index: 30;
+}
+
+.ui-logo {
+  display: block;
+  float: left;
+  // width:30%;
+  width: 90px;
+  line-height: 30px;
+  color: $gray50;
+  .icons-logo {
+    float: left;
+    // width: 41px;
+    // height: 24px;
+    margin: 5px 5px 0 0;
+  }
+  span {
+    float: left;
+    font-size: 13px;
+  }
+  // .logo {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //     margin-right: 10px;
+  //     width: icons-sprite-width('logo');
+  //     height: icons-sprite-height('logo');
+  // }
+}
+
+.m-search-wrap {
+  width: 70%;
+  height: 32px;
+  float: right;
+}
+
+.m-search {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  .close-search {
+    display: none;
+    top: 11px;
+    right: 35px;
+    // @include icons-dimensions(icons,close-s);
+    width: icons-sprite-width('close-s');
+    height: icons-sprite-height('close-s');
+  }
+  .off-search {
+    font-size: 0.75em;
+    color: $gray50;
+  }
+  .product-list {
+      width: 20px;
+      margin-top: 6px;
+  }
+  &.index {
+    .ui-search-btn {
+    //   right: 0;
+    }
+  }
+}
+
+.ui-search {
+  width: 87%;
+  height: 30px;
+  right: 28px;
+  // left:30px;
+  // top: 8px;
+  background-color: $skin-w;
+  font-size: 13px;
+  text-indent: 1em;
+  color: $gray50;
+  border: 1px solid $bd-color;
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  &:focus {
+    border: 1px solid $gray50;
+  }
+}
+
+.ui-search-btn {
+  // display: inline-block;
+  // vertical-align: middle;
+  right: 35px;
+  top: 8px;
+  outline: none;
+  border: none;
+  background-color: #FFF;
+  width: icons-sprite-width('search');
+  height: icons-sprite-height('search');
+}

@@ -1,0 +1,61 @@
+@charset "UTF-8";
+//@import "compass/utilities/sprites";
+
+/* 精灵图样式 */
+
+$icons-default:sprite-map("icons/*.png", $spacing:30px);
+@mixin scale-background($name, $retina:$icons-default) {
+    // background-image: sprite-url($retina);
+    background-position: 0 round(nth(sprite-position($retina, $name), 2) / 2);
+    height: round(image-height(sprite-file($retina, $name)) / 2);
+    width: round(image-width(sprite-file($retina, $name)) /2);
+}
+
+%sprite-pub-style {
+    background: $icons-default no-repeat;
+    // background-repeat: no-repeat;
+    // treat the @2x retina sprite sheet as 50% wide for double resolution upon display
+    $double-width: ceil(image-width(sprite-path($icons-default)) / 2);
+    $auto-height: auto;
+    @include background-size($double-width $auto-height);
+}
+
+$sprite-list:sprite-names($icons-default);
+[class^="icons-"],
+[class*="icons-"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// 循环输出精灵图样式
+@each $var in $sprite-list {
+    .icons {
+        @at-root {
+            #{&}-#{$var} {
+                @extend %sprite-pub-style;
+                @include scale-background($var);
+            }
+        }
+    }
+}
+
+.status-icon {
+    display: block;
+    margin: 10px auto;
+}
+
+.icons-arrow-rt {
+    margin-top: 5px;
+}
+
+.icons-upload {
+    margin-bottom: 10px;
+}
+
+.icons-check {
+    display: none;
+    &.checked {
+        display: inline-block;
+    }
+}
+

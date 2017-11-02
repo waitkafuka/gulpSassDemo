@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* 容器*/
+
+.g-container-full {
+  width: 100%;
+  border-bottom:1px solid #d3d3d3;
+  @extend %clearfix;
+  @extend %border-box;  
+}
+
+.g-container-half {
+  width: 50%;
+  @extend %clearfix;
+  @extend %border-box;
+}
+
+.item-half {
+  width: 48%;
+  @extend %clearfix;
+  @extend %border-box;
+}
